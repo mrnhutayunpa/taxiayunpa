@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://cdn.bio.link/themes/backgrounds/rainy_night.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 185, 0, 0.3);
+    margin: 20px auto;
+    max-width: 600px;
+    width: 90%;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #FFD700;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .hoa-dao {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: url('./img/hoa-dao.png') no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container .hoa-mai {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 0;
+
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: url('./img/hoa-mai.png') no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+    pointer-events: none;
+    transform: rotate(0deg);
+    z-index: 0;
+}
+
+.container > canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container > *:not(canvas) {
+    position: relative;
+    z-index: 2;
+}
+
+
+@keyframes sparkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    animation: sparkle 1.5s linear infinite;
+}
+
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.header-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tagline {
+    color: #e9e9e9;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.service-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.info-item {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    border: 1px solid #FFD700;
+    box-shadow: 0 2px 10px rgba(255, 185, 0, 0.2);
+}
+
+.info-item i {
+    font-size: 1.8em;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.info-item h3 {
+    color: #FFD700;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.info-item ul {
+    list-style: none;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.info-item ul li {
+    margin: 8px 0;
+    color: #ffffff;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.info-item ul li:before {
+    content: "✓";
+    color: #FFD700;
+    position: absolute;
+    left: -15px;
+}
+
+.contact-info {
+    margin: 30px 0;
+}
+
+.highlight {
+    color: #FFD700;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s;
+    border: 1px solid #FFD700;
+    background: linear-gradient(45deg, #c41e3a, #d4af37);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover {
+    transform: scale(1.05);
+}
+
+.social-btn i, .social-btn .zalo-icon {
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+.line {
+    background: #00B900;
+}
+
+.zalo {
+    background: #0068ff;
+}
+
+.phone {
+    background: #f19305;
+}
+
+.zalo-icon {
+    font-weight: bold;
+    font-style: normal;
+}
+
+@media (max-width: 480px) {
+    .container {
+        min-height: 500px;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .service-info {
+        gap: 10px;
+    }
+
+    .info-item {
+        min-width: 45%;
+        padding: 10px;
+    }
+
+    .info-item h3 {
+        font-size: 1em;
+    }
+
+    .info-item ul li {
+        font-size: 11px;
+        line-height: 1.3;
+        margin: 5px 0;
+        padding-right: 5px;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .header-image {
+        width: 40px;
+        height: 40px;
+    }
+} 
+
+.taxi-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.taxi-container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Áp dụng font cho các tiêu đề */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+}
+
+/* Áp dụng font cho các nút */
+.social-btn {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+}
+
+/* Áp dụng font cho highlight text */
+.highlight {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+}
+
+/* Thêm style cho ảnh thumbnail (để preview) */
+.thumbnail-preview {
+    width: 1200px;
+    height: 630px;
+    background: linear-gradient(45deg, #c41e3a, #d4af37);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+  
