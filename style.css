@@ -7,13 +7,51 @@
 body {
     font-family: 'Chakra Petch', sans-serif;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://cdn.bio.link/themes/backgrounds/rainy_night.jpg') center/cover no-repeat fixed;
+                url('https://cdn-media.sforum.vn/storage/app/media/ctv_seo10/background-tet-7.jpg') center/cover no-repeat fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
 }
+.new-year-banner {
+    background-color: #FFD700; /* Màu nền vàng */
+    color: #000; /* Màu chữ đen */
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    width: 100%;
+    height: 40px; /* Chiều cao thanh chạy */
+    position: fixed; /* Thanh cố định */
+    top: 0; /* Đặt ở đầu trang */
+    left: 0;
+    z-index: 1000; /* Ưu tiên hiển thị */
+    display: flex;
+    align-items: center;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 10s linear infinite; /* Hiệu ứng chạy chữ */
+    position: absolute;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%; /* Đảm bảo chữ bắt đầu ngoài màn hình */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
 
 .container {
     text-align: center;
@@ -21,17 +59,62 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(255, 185, 0, 0.3);
     margin: 20px auto;
-    max-width: 600px;
+    max-width: 800px;
     width: 90%;
     min-height: 600px;
     position: relative;
     overflow: hidden;
-    border: 2px solid #FFD700;
+    border: 2px solid #2ce1a3;;
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+
+
+
+
+
+@keyframes slide-in-top {
+    0% {
+      transform: translateY(-100%);
+  
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    width: 300%;
+    height: 20%;
+    background: linear-gradient(
+      to top right,
+      transparent,
+      rgba(255, 255, 255, 0.212),
+      transparent
+    );
+    animation: shining 3s infinite linear;
+    transform: rotate(45deg);
+    transition: opacity 0.03s ease;
+    backface-visibility: hidden; /* Improve rendering performance */
+  }
+  @keyframes shining {
+    0% {
+      top: 100%;
+      left: -200%;
+    }
+    100% {
+      top: -100%;
+      left: 100%;
+    }
+  }
 
 .container .hoa-dao {
     content: '';
@@ -116,7 +199,7 @@ body {
 }
 
 h1 {
-    color: #ffffff;
+    color: #2ce1a3;;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     font-size: 3.5rem;
     font-weight: bold;
@@ -139,15 +222,77 @@ h1 {
     padding: 0 10px;
 }
 
+.service-info h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff; /* Nền xanh dương */
+    color: #fff; /* Chữ trắng */
+    padding: 10px 20px;
+    border-radius: 10px; /* Bo góc */
+    font-size: 24px;
+    text-transform: uppercase; /* Chuyển chữ thành in hoa */
+    position: relative;
+    margin: 0 0 20px; /* Khoảng cách phía dưới */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+.service-info h3 i {
+    margin: 0 10px; /* Khoảng cách giữa biểu tượng và chữ */
+    font-size: 24px;
+    color: #ffd700; /* Màu vàng cho biểu tượng */
+}
+
+.service-info ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Không ảnh hưởng đến sự kiện chuột */
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff, transparent);
+    animation: explode 1s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+.service-info ul li {
+    background-color: #2ce1a23f; /* Nền đen với độ trong suốt */
+    color: #fff; /* Chữ trắng */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Đổ bóng */
+}
+
 .info-item {
-    flex: 1;
-    min-width: 150px;
-    max-width: 200px;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 12px;
-    border: 1px solid #FFD700;
-    box-shadow: 0 2px 10px rgba(255, 185, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #2ce1a3;;
+    border-radius: 10px;
+    width: 80%; /* Hoặc điều chỉnh kích thước phù hợp */
+    max-width: 500px;
 }
 
 .info-item i {
@@ -194,15 +339,92 @@ h1 {
     margin: 20px 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+.contact-message p {
+    padding: 10px 0; /* Tạo thêm không gian nội dung */
+    border-top: 1px solid #ddd; /* Đường viền trên để phân chia */
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    animation: colorChange 3s infinite; /* Áp dụng animation */
+}
+
+/* Định nghĩa animation */
+@keyframes colorChange {
+    0% {
+        color: #333;
+    }
+    25% {
+        color: #FF5722;
+    }
+    50% {
+        color: #4CAF50;
+    }
+    75% {
+        color: #2196F3;
+    }
+    100% {
+        color: #333;
+    }
+}
+
+/* Countdown container */
+.countdown-container {
+    background-color: #ff0505; /* Màu nền (vàng nhạt) */
+    padding: 20px; /* Khoảng cách bên trong */
+    border-radius: 15px; /* Bo góc */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    max-width: 600px; /* Giới hạn chiều rộng */
+    margin: 20px auto; /* Căn giữa trên màn hình */
+}
+
+/* Countdown container header */
+.countdown-header {
+    text-align: center;
+    margin-bottom: 20px; /* Khoảng cách với phần timer */
+}
+
+.countdown-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* Màu chữ nổi bật */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.countdown-header p {
+    font-size: 16px;
+    color: #fffefe; /* Màu chữ nhẹ hơn */
+}
+
+/* Countdown units */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa các đơn vị thời gian */
+}
+
+.time-unit {
+    background-color: #ffffff; /* Màu nền cho từng ô */
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #333;
+}
+
+.time-unit span {
+    display: block;
+    font-size: 40px; /* Kích thước lớn cho số đếm */
+    font-weight: bold;
+    color: #FF5722;
+}
+
 
 .social-links {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 15px;
-    max-width: 300px;
-    margin: 0 auto;
-    margin-top: auto;
-    padding-top: 20px;
 }
 
 .social-btn {
@@ -238,6 +460,15 @@ h1 {
 
 .zalo {
     background: #0068ff;
+}
+
+.zalo-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1200px-Icon_of_Zalo.svg.png');
+    background-size: cover;
+    margin-right: 8px;
 }
 
 .phone {
