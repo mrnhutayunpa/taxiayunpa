@@ -40,6 +40,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="fireworks-container"></div>
+    <!-- <div class="new-year-banner">
+        <div class="marquee">
+            <span>🎉 Chúc Mừng Năm Mới 2025! Chúc bạn một năm tràn đầy niềm vui và hạnh phúc!  🎆</span>
+        </div>
+    </div> -->
     <div class="container">
         <div class="hoa-dao"></div>
     <div class="hoa-mai"></div>
@@ -50,23 +56,25 @@
                     alt="Taxi"
                     class="header-image"
                 />
-                <h1>NGỌC NHỨT</h1>
+                <h1>TAXI AYUNPA</h1>
             </div>
-            <p class="tagline">Dịch vụ taxi uy tín tại Ayunpa</p>
-        </div>
+            <p class="tagline">UY TÍN - AN TOÀN - NHANH CHÓNG - CHẤT LƯỢNG</p>
+       
 
         <div class="service-info">
             <div class="info-item">
-                <i class="fas fa-car"></i>
-                <h3>Dịch Vụ</h3>
+                <h3><i class="fas fa-car"></i>
+                 Dịch Vụ 
+                <i class="fas fa-car"></i></h3>
                 <ul>
-                    <li>Đưa đón sân bay</li>
-                    <li>Du lịch</li>
-                    <li>Thuê xe theo ngày</li>
+                    <li>Nhận Hợp Đồng , Du Lịch</li>
+                    <li>Đưa Đón Sân Bay , Đi Tỉnh</li>
+                    <li>Taxi Gần Xa</li>
+                    <li>Lái Xe Hộ</li>
                 </ul>
             </div>
 
-            <div class="info-item">
+            <!-- <div class="info-item">
                 <i class="fas fa-star"></i>
                 <h3>Cam Kết</h3>
                 <ul>
@@ -75,30 +83,80 @@
                     <li>Giá cả phải chăng</li>
                 </ul>
             </div>
-        </div>
+        -->
         
-        <!-- <div class="contact-info">
-            <p class="highlight">Liên hệ ngay để được phục vụ tốt nhất!</p>
-        </div> -->
-
         <div class="social-links">
             <a href="fb://profile/YOUR_FB_ID" class="social-btn facebook">
                 <i class="fab fa-facebook"></i>
                 <span>Facebook</span>
             </a>
 
-            <a href="https://zalo.me/YOUR_ZALO_ID" class="social-btn zalo">
-                <i class="fab fa-zalo"></i>
+            <a href="https://zalo.me/0984600501" class="social-btn zalo">
+                <span class="zalo-icon"></span>
                 <span>Zalo</span>
             </a>
 
-            <a href="tel:+84123456789" class="social-btn phone">
+            <a href="tel:+84984600501" class="social-btn phone">
                 <i class="fas fa-phone"></i>
                 <span>Gọi Ngay</span>
             </a>
         </div>
     </div>
+    <div class="contact-message">
+        <p>Rất hân hạnh được phục vụ và đồng hành cùng quý khách trên mọi chuyến đi!</p>
+    </div>
+    <div class="countdown-container">
+        <div class="countdown-header">
+            <h2>ĐẾM NGƯỢC ĐẾN TẾT NGUYÊN ĐÁN 2025</h2>
+            <p>Đếm ngược thời gian Còn bao nhiêu ngày nữa đến Tết Nguyên Đán 2025.</p>
+        </div>
+    
+        <div id="countdown">
+            <div class="time-unit">
+                <span id="days">00</span> Ngày
+            </div>
+            <div class="time-unit">
+                <span id="hours">00</span> Giờ
+            </div>
+            <div class="time-unit">
+                <span id="minutes">00</span> Phút
+            </div>
+            <div class="time-unit">
+                <span id="seconds">00</span> Giây
+            </div>
+        </div>
+    </div>
+    
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
+<script>
+    function updateCountdown() {
+        const targetDate = new Date('2025-01-29T00:00:00'); // Ngày 29/01/2025 lúc 00:00
+        const now = new Date();
+        const timeDifference = targetDate - now;
+
+        if (timeDifference <= 0) {
+            document.getElementById('countdown').innerHTML = 'Thời gian đã kết thúc!';
+            return;
+        }
+
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+
+    // Initial call to populate the countdown immediately
+    updateCountdown();
+</script>
