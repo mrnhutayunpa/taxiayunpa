@@ -397,12 +397,13 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap; /* Giúp các nút xuống dòng khi màn hình nhỏ */
 }
 
 .social-btn {
     display: flex;
     align-items: center;
-    padding: 15px 25px;
+    padding: 10px 20px; /* Giảm kích thước mặc định */
     border-radius: 10px;
     text-decoration: none;
     color: white;
@@ -411,6 +412,7 @@ h1 {
     border: 1px solid #FFD700;
     background: linear-gradient(45deg, #c41e3a, #d4af37);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 16px; /* Kích thước chữ mặc định */
 }
 
 .social-btn:hover {
@@ -418,9 +420,35 @@ h1 {
 }
 
 .social-btn i, .social-btn .zalo-icon {
-    margin-right: 15px;
-    font-size: 24px;
+    margin-right: 10px;
+    font-size: 20px; /* Kích thước icon mặc định */
 }
+
+/* Điều chỉnh cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .social-btn {
+        padding: 8px 15px;
+        font-size: 14px; /* Giảm kích thước chữ */
+    }
+
+    .social-btn i, .social-btn .zalo-icon {
+        font-size: 18px; /* Giảm kích thước icon */
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-btn {
+        padding: 6px 10px;
+        font-size: 12px; /* Nhỏ hơn nữa cho màn hình rất nhỏ */
+    }
+
+    .social-btn i, .social-btn .zalo-icon {
+        font-size: 16px; /* Giảm thêm kích thước icon */
+        margin-right: 5px;
+    }
+}
+
 
 .facebook {
     background: #1877f2;
